@@ -69,15 +69,11 @@ namespace CSUtil.CameraControl {
 			GoToInstance(id, pos, openInfoPanel);
 		}
 
-		public void GoToInstance(InstanceID id, Vector3 pos, bool openInfoPanel) {
+		public void GoToInstance(InstanceID id, Vector3 pos, bool openInfoPanel=false) {
 			pos.y = Camera.main.transform.position.y;
 
-			WorldInfoPanel.HideAllWorldInfoPanels();
-			if (openInfoPanel) {
-				WorldInfoPanel.ChangeInstanceID(WorldInfoPanel.GetCurrentInstanceID(), id);
-			}
-
 			ToolsModifierControl.cameraController.SetTarget(id, pos, true);
+			DefaultTool.OpenWorldInfoPanel(id, pos);
 		}
 	}
 }
