@@ -73,7 +73,9 @@ namespace CSUtil.CameraControl {
 			pos.y = Camera.main.transform.position.y;
 
 			ToolsModifierControl.cameraController.SetTarget(id, pos, true);
-			DefaultTool.OpenWorldInfoPanel(id, pos);
+			Singleton<SimulationManager>.instance.m_ThreadingWrapper.QueueMainThread(() => {
+				DefaultTool.OpenWorldInfoPanel(id, pos);
+			});
 		}
 	}
 }
