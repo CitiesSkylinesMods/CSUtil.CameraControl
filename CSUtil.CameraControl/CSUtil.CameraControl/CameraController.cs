@@ -60,7 +60,7 @@ namespace CSUtil.CameraControl {
 			GoToInstance(id, pos, openInfoPanel);
 		}
 
-		internal void GoToCitizenInstance(ushort citizenInstanceId, bool openInfoPanel = false) {
+		public void GoToCitizenInstance(ushort citizenInstanceId, bool openInfoPanel = false) {
 			InstanceID id = default(InstanceID);
 			id.CitizenInstance = citizenInstanceId;
 
