@@ -15,7 +15,7 @@ namespace CSUtil.CameraControl {
 			ToolsModifierControl.cameraController.SetOverrideModeOff();
 		}
 
-		public void GoToBuilding(ushort buildingId, bool openInfoPanel=false) {
+		public void GoToBuilding(ushort buildingId, bool openInfoPanel = false) {
 			InstanceID id = default(InstanceID);
 			id.Building = buildingId;
 
@@ -69,7 +69,7 @@ namespace CSUtil.CameraControl {
 			GoToInstance(id, pos, openInfoPanel);
 		}
 
-		public void GoToInstance(InstanceID id, Vector3 pos, bool openInfoPanel=false) {
+		public void GoToInstance(InstanceID id, Vector3 pos, bool openInfoPanel = false) {
 			pos.y = Camera.main.transform.position.y;
 
 			ToolsModifierControl.cameraController.SetTarget(id, pos, true);
